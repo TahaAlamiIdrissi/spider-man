@@ -47,8 +47,29 @@ def append_to_file(path, data):
     with open(path, 'a') as file:
         file.write(data+'\n')
 
-#delete the content of a file(clear)
+# delete the content of a file(clear)
+
+
 def clear_file(path):
-    with open(path,'w'):
-        #do nothing 
+    with open(path, 'w'):
+        # do nothing
         pass
+
+# read a file and convert each line to set items
+
+
+def convert_file_to_set(file_name):
+    results = set()
+    with open(file_name, 'rt') as file:
+        for line in file:
+            results.add(line.replace('\n', ''))
+    return results
+
+# iterate through a set , each item of a set will be a new line in a file
+
+
+def convert_set_to_file(set_links, file_name):
+    clear_file(file_name)
+    # instead of just storing we can sort the links to have an alphabetical order (wich is better)
+    for link in sorted(set_links):
+        append_to_file(file_name, link)
