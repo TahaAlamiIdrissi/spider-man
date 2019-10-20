@@ -33,3 +33,11 @@ def create_data_files(project_name, base_url):
 
     if not os.path.isfile(crawled):
         write_file(crawled, '')
+
+
+#create a new file
+def write_file(path,data):
+    file = open(path,'w')
+    file.write(data)
+    file.close()
+    
