@@ -24,8 +24,8 @@ def create_data_files(project_name, base_url):
     # create a list of links waiting to be crawled
     # create a list of crawled links
 
-    queue = project_name + '/queue.txt'
-    crawled = project_name + '/crawled.txt'
+    queue = project_name+'/queue.txt'
+    crawled = project_name+'/crawled.txt'
 
     if not os.path.isfile(queue):
         # are queue list should not be empty because if it start and find nothing to crawl :// haha
@@ -40,4 +40,3 @@ def write_file(path,data):
     file = open(path,'w')
     file.write(data)
     file.close()
-    
