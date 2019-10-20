@@ -35,8 +35,20 @@ def create_data_files(project_name, base_url):
         write_file(crawled, '')
 
 
-#create a new file
-def write_file(path,data):
-    file = open(path,'w')
+# create a new file
+def write_file(path, data):
+    file = open(path, 'w')
     file.write(data)
     file.close()
+
+
+# add data onto an existing file (each link on a new line)
+def append_to_file(path, data):
+    with open(path, 'a') as file:
+        file.write(data+'\n')
+
+#delete the content of a file(clear)
+def clear_file(path):
+    with open(path,'w'):
+        #do nothing 
+        pass
